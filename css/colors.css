@@ -1,0 +1,16 @@
+/* CSS VARIABELS */
+* {
+  /* GLOBALS */
+  --darkblue: #061ba8;
+  --white: #faf4e6;
+  --black: #1a202c;
+  --green: #cac444;
+
+  /* TOKENS */
+  --bg: var(--white);
+  --fg: var(--black);
+  --fg_alt: var(--darkblue);
+  --rating: var(--green);
+  --border: var(--darkblue);
+  --shadow: var(--darkblue);
+}
