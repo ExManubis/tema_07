@@ -11,6 +11,11 @@ nav {
   padding: 5vh 1vw 5vh 2vw;
   transition: top 0.75s;
   border-bottom: 3px solid var(--border);
+  background-color: var(--bg);
+}
+
+nav.active {
+  background-color: none;
 }
 
 .logo {

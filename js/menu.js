@@ -4,6 +4,7 @@ const menuIcon = document.querySelector(".menu_icon");
 const menuLinks = document.querySelector(".menu_links");
 const menuTransition = document.querySelector(".menu_transition");
 const menuWrapper = document.querySelector(".menu_wrapper");
+const navbar = document.getElementById("navbar");
 
 // VARIABLES
 let toggle = false;
@@ -22,6 +23,7 @@ function animate() {
     c = linearInterpol(c, 0, 0.065).toFixed(2);
     menuTransition.classList.add("active");
     menuWrapper.classList.add("active");
+    navbar.classList.add("active");
     menuPath.setAttribute("stroke-width", "5px");
     menuPath.setAttribute("fill", "#061ba8");
     menuPath.setAttribute(
@@ -40,6 +42,7 @@ function animate() {
       menuPath.setAttribute("fill", "#faf4e6");
       menuTransition.classList.remove("active");
       menuWrapper.classList.remove("active");
+      navbar.classList.remove("active");
     }, 2000);
   }
 
