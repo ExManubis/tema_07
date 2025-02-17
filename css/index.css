@@ -9,7 +9,7 @@ main {
 
 .hero {
   padding: 15vh 1vw 0vh 1vw;
-  font-family: "Averia Serif Libre";
+  font-family: "Averia Sans Libre";
   font-size: 2.2rem;
   color: var(--fg_alt);
   text-align: center;
