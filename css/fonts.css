@@ -1,0 +1,13 @@
+@font-face {
+  font-family: "Instrument Serif", serif;
+  font-weight: 400;
+  font-style: normal;
+  src: url(../fonts/Instrument_Serif/InstrumentSerif-Regular.ttf);
+}
+
+@font-face {
+  font-family: "Averia Serif Libre", serif;
+  font-weight: 300;
+  font-style: normal;
+  src: url(../fonts/Averia_Serif_Libre/AveriaSerifLibre-Regular.ttf);
+}
