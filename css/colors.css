@@ -8,9 +8,13 @@
 
   /* TOKENS */
   --bg: var(--white);
+  --bg_inverted: var(--darkblue);
   --fg: var(--black);
   --fg_alt: var(--darkblue);
+  --fg_inverted: var(--white);
   --rating: var(--green);
   --border: var(--darkblue);
   --shadow: var(--darkblue);
+  --burger_icon: var(--darkblue);
+  --burger_icon_inverted: var(--white);
 }

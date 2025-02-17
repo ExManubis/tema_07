@@ -1,0 +1,35 @@
+@media (min-width: 800px) {
+  .menu_icon {
+    display: none;
+  }
+
+  .menu_list {
+    display: flex;
+    flex-direction: row-reverse;
+    width: 100vw;
+  }
+
+  .menu_list ul {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+  }
+
+  .menu_list a {
+    text-decoration: none;
+    padding: 1vw;
+    font-family: "menu-item";
+    color: var(--menu_item);
+    font-size: 1.5rem;
+    transition: 0.5s;
+  }
+
+  .menu_list a:hover {
+    color: var(--menu_item_hover);
+    transition: 0.5s;
+  }
+
+  .menu_list a:visited {
+    text-decoration: none;
+  }
+}
