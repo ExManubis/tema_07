@@ -43,11 +43,44 @@ main {
   background-color: var(--bg);
 }
 
-.box img {
+.box svg {
   width: 30px;
   height: auto;
 }
 
 a:visited {
   text-decoration: none;
+}
+
+@media (min-width: 800px) {
+  main {
+    background-image: url("../imgs/index/illustrationtable.svg");
+    background-attachment: scroll;
+    height: 100vh;
+  }
+
+  .hero {
+    font-size: 4rem;
+  }
+
+  .category_container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 70vw;
+    justify-content: space-between;
+    margin: auto;
+  }
+
+  .box {
+    width: 300px;
+  }
+
+  .box:hover {
+    background-color: var(--bg_inverted);
+    color: var(--fg_inverted);
+  }
+
+  .box:hover path {
+    stroke: var(--fg_inverted);
+  }
 }
