@@ -6,32 +6,56 @@ Skriv derfor jeres fælles retningslinjer for punkterne herunder(tilføj gerne f
 
 ## Projektstruktur
 
-Beslut, hvordan I vil organisere jeres projekt – struktur for mapper og filer.
-
-- Hvordan organiserer I billeder, fonte og andre ressourcer?
-- Hvor placerer I boilerplate?(fx CSS- og JavaScript-filer, der bruges på tværs af projektet)
-- Hvor placerer I HTML, CSS- og JavaScript-filer til fx detaljevisning og listevisning?
+Alle billeder skal i mappen kaldet imgs, i en undermappe med samme navn som siden. Ligger billeder ikke i en undermappe, er det fordi de bruges på flere sider. Fonte skal i mappen fonts, javascript skal i mappen js, CSS skal i mappen css, html-filer (udover index.html) skal i mappen html.
 
 ## Navngivning
 
-Beslutte hvordan i vil navngive filer og mapper for at sikre en ensartet struktur og undgå forvirring.
-
-- Hvordan navngiver I filnavne? (fx små bogstaver, ingen mellemrum, brug af - eller \_)
-- Hvordan sikre I at det er til at forstå hvilke HTML-, CSS- og JavaScript-filer der høre sammen?
+Filer navngives med småt, uden mellemrum. Er der brug for mellemrum i navnet bruges underscore. Filer der hører sammen navngives det samme - fx. index.html, index.css, index.js. Filer kan også navngives efter et element, hvis de bruges til et element der figurerer på flere sider - fx. menu.css, menu.js.
 
 ## Link til scripts
 
-- Hvor placerer I script referencer i HTML'en? (fx i <head> med defer attribute, eller sidst i <body>)
+Links til scripts placeres til sidst i body.
 
 ## Git branches
 
-- Hvordan navngiver I branches, så alle kan forstår hvem der arbejder i branchen og på hvad?(fx feature-lotte-formular)
+Branches navngives med en beskrivende titel i lower camel-case, efterfulgt af en bindestreg efterfulgt af navnet på den der arbejder på branchen. Fx. cssReset-mikkel, indexDesktop-lukas, singleDesktop-sille. Titlen skal være beskrivende, og skal kunne idenficeres med en arbejdsopgave på scrum-boardet.
 
 ## Arbejdsflow
 
 - Hvordan fordeler I arbejdet, så I undgår at flere arbejder i de samme filer samtidigt?
 - Hvordan sikrer I, at commit-beskeder er beskrivende?
 - Hvordan kommunikerer i om ændringer i main branchen når feature merges?
+
+### Scrum + Git Arbejdsflow
+
+Alle filer er relateret til en arbejdsopgave på vores scrumboard. Ved at bruge scrum-boardet, sikrer vi at der ikke arbejdes på de samme filer samtidigt. Filer der bruges på flere sider, skal have en selvstændig arbejdsopgave, samt branch tilknyttet.
+
+### Commit-beskeder
+
+Commit-beskeder skrives altid på engelsk, og følger en forsimplet udgave af conventional commit specification (<https://www.conventionalcommits.org/en/v1.0.0/>), og struktureres således:
+
+```bash
+<type>[scope]: <description>
+
+[body]
+
+# Eksempler
+feat(css): add global variabler
+
+Added global color variables to CSS.
+
+####################################
+
+docs(readme): add javascript styleguide to readme
+
+Added javascript styleguide to readme.
+
+####################################
+
+feat(js): add auto-hide to global menu
+
+Added an auto-hide on scroll function to the global menu, so users have more screenspace for content.
+```
 
 ## Kode
 
