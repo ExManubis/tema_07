@@ -13,19 +13,28 @@
     list-style: none;
     display: flex;
     flex-direction: row;
+    align-items: center;
+  }
+
+  .link_seperator {
+    background-color: var(--border);
+    width: 3px;
+    height: 10vh;
   }
 
   .menu_list a {
     text-decoration: none;
-    padding: 1vw;
-    font-family: "menu-item";
-    color: var(--menu_item);
+    padding: 1.5vw;
+    font-family: "Instrument Serif";
+    color: var(--fg);
     font-size: 1.5rem;
     transition: 0.5s;
+    justify-content: center;
   }
 
   .menu_list a:hover {
-    color: var(--menu_item_hover);
+    color: var(--green);
+    font-size: 1.75rem;
     transition: 0.5s;
   }
 

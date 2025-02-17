@@ -8,7 +8,7 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 5vh 2vw;
+  padding: 5vh 1vw 5vh 2vw;
   transition: top 0.75s;
   border-bottom: 3px solid var(--border);
 }
@@ -114,7 +114,7 @@ nav {
 }
 
 .menu_links li {
-  font-family: hero;
+  font-family: "Instrument Serif";
   font-size: 3rem;
 }
 
