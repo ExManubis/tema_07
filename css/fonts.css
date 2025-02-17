@@ -1,13 +1,13 @@
 @font-face {
   font-family: "Instrument Serif";
-  font-weight: 400;
+  font-weight: 600;
   font-style: normal;
   src: url("../fonts/Instrument_Serif/InstrumentSerif-Regular.ttf");
 }
 
 @font-face {
   font-family: "Averia Serif Libre";
-  font-weight: 300;
+  font-weight: 600;
   font-style: normal;
   src: url("../fonts/Averia_Serif_Libre/AveriaSerifLibre-Regular.ttf");
 }

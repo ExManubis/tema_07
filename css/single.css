@@ -1,0 +1,71 @@
+h1 {
+  font-family: "Averia Serif Libre", serif;
+  text-transform: uppercase;
+  font-size: 55px;
+  margin: 15px 15px 0 15px;
+  color: var(--darkblue);
+  text-align: center;
+}
+
+h2 {
+  font-family: "Instrument Serif", serif;
+  font-size: 22px;
+  padding: 0 20px;
+}
+
+h3 {
+  font-family: "Averia Serif Libre", serif;
+  font-size: 30px;
+  padding: 0 20px;
+}
+
+.h2_reviews {
+  font-size: 35px;
+}
+
+/*** PRODUCT-LIST ***/
+
+.productContainer {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  padding: 2vh 10vh;
+}
+
+.product_list_container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2px;
+}
+
+.image_container {
+  position: relative;
+  display: inline-block;
+  display: flex;
+  align-items: flex-start;
+  margin-top: 8.5vh;
+  border: 3px solid var(--darkblue);
+  /* margin-left: 10vh;
+  margin-right: 10vh; */
+}
+
+.productDetails {
+  display: flex;
+  flex-direction: column;
+  border: 3px solid var(--darkblue);
+  padding-top: 3vh;
+}
+
+.productInfo {
+  margin: 5px 0 10px 0;
+}
+
+.divider {
+  border-top: 3px solid var(--darkblue);
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+.blaa_border {
+  box-shadow: -20px 20px 0 var(--darkblue);
+}
