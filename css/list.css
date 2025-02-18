@@ -15,7 +15,7 @@
 
 .list_grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(375px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   grid-template-rows: auto;
   gap: 2rem;
 }
@@ -26,13 +26,14 @@
   grid-template-columns: subgrid;
   grid-template-rows: subgrid;
   border: 3px solid var(--border);
-  margin-bottom: 5vh;
+  margin-bottom: 1vh;
+  margin: 0vh 2vw 1vh 2vw;
 }
 
 .title {
   display: flex;
   justify-content: space-around;
-  padding-right: 50px;
+  padding-right: 70px;
   padding-bottom: 2vh;
   padding-left: 1vw;
   padding-top: 2vh;
@@ -40,12 +41,12 @@
 
 .title img {
   height: auto;
-  width: 30px;
+  width: 25px;
 }
 
 h2 {
   font-family: "Averia Sans Libre";
-  font-size: 2.5rem;
+  font-size: 2.1rem;
   color: var(--fg_alt);
   width: 90%;
 }
