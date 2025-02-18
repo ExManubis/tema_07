@@ -4,7 +4,7 @@ main {
   background-image: url("../imgs/index/illustrationtable_mobil.svg");
   background-attachment: fixed;
   background-repeat: no-repeat;
-  background-position-y: -50px;
+  background-position-y: 10vh;
 }
 
 h1 {
@@ -29,7 +29,7 @@ h3 {
   padding: 0 20px;
 }
 
-ul {
+.card_list {
   padding-top: 12px;
   padding-left: 38px;
 }
@@ -89,7 +89,8 @@ ul {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: 10vh 10vw 0 10vw;
+  padding-top: 10vh;
+  margin: 0 10vw 0 10vw;
 }
 
 .image_container {
