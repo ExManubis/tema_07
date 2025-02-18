@@ -1,0 +1,112 @@
+h1 {
+  font-family: "Averia Sans Libre", sans;
+  text-transform: uppercase;
+  font-size: 3rem;
+  margin: 15px 15px 15px 15px;
+  color: var(--fg_alt);
+  text-align: center;
+}
+
+h2 {
+  font-family: "Instrument Serif", serif;
+  font-size: 22px;
+  padding: 0 20px;
+  line-height: 125%;
+}
+
+h3 {
+  font-family: "Averia Sans Libre", sans;
+  font-size: 30px;
+  padding: 0 20px;
+}
+
+ul {
+  padding-top: 12px;
+  padding-left: 38px;
+}
+
+.rating {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
+.rating img {
+  width: 10%;
+  height: auto;
+}
+
+.div_1 {
+  border-top: 3px solid var(--border);
+  border-left: 3px solid var(--border);
+  border-right: 3px solid var(--border);
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.div_2 {
+  border-top: 3px solid var(--border);
+  border-left: 24px solid var(--border);
+  border-right: 24px solid var(--border);
+  margin-right: -21px;
+  margin-left: -21px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.div_3 {
+  border-top: 3px solid var(--border);
+  border-left: 24px solid var(--border);
+  border-right: 24px solid var(--border);
+  margin-right: -21px;
+  margin-left: -21px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.div_4 {
+  border-top: 3px solid var(--border);
+  border-left: 24px solid var(--border);
+  border-right: 24px solid var(--border);
+  border-bottom: 24px solid var(--border);
+  margin-right: -21px;
+  margin-left: -21px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+/*** PRODUCT-LIST ***/
+
+.productContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 10vh 10vw 0 10vw;
+}
+
+.image_container {
+  place-self: center;
+  border: 3px solid var(--darkblue);
+  width: 80%;
+  /* margin-left: 10vh;
+  margin-right: 10vh; */
+}
+
+.productDetails {
+  display: flex;
+  flex-direction: column;
+  border: 3px solid var(--darkblue);
+  padding-top: 3vh;
+}
+
+.productInfo {
+  margin: 5px 0 10px 0;
+}
+
+.divider {
+  border-top: 3px solid var(--darkblue);
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
