@@ -11,6 +11,7 @@
   font-size: 3rem;
   color: var(--fg_alt);
   text-align: center;
+  text-transform: uppercase;
 }
 
 .list_grid {
@@ -49,6 +50,10 @@ h2 {
   font-size: 2.1rem;
   color: var(--fg_alt);
   width: 90%;
+  text-transform: uppercase;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 .card a {
@@ -66,7 +71,7 @@ h2 {
   border-bottom: 3px solid var(--border);
   width: 60%;
   height: auto;
-  place-self: end;
+  margin-left: 40%;
   box-shadow: -10px 10px var(--shadow);
 }
 
