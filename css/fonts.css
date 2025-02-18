@@ -11,3 +11,9 @@
   font-style: normal;
   src: url("../fonts/Averia_Serif_Libre/AveriaSerifLibre-Regular.ttf");
 }
+
+@font-face {
+  font-family: "Averia Sans Libre";
+  font-weight: 600;
+  src: url("../fonts/Averia_Sans_Libre/AveriaSansLibre-Regular.ttf");
+}
