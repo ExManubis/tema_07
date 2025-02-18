@@ -5,7 +5,6 @@ const getUrl = window.location.search;
 const getSearch = new URLSearchParams(getUrl);
 const tag = getSearch.get("tag");
 
-
 // FETCH DATA AND RENDER
 window.addEventListener("load", () => {
   fetch(`https://dummyjson.com/recipes/tag/${tag}`)
@@ -16,7 +15,7 @@ window.addEventListener("load", () => {
         .map(
           (recipe) => `
             <div class="card">
-            <a href="./html/single.html?id=${recipe.id}">
+            <a href="./single.html?id=${recipe.id}">
               <div class="title">
                 <h2>${recipe.name}</h2>
                 <img src="../imgs/arrow.svg" alt="arrow" />

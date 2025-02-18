@@ -1,52 +1,48 @@
+// CONSTANTS
 const productId = new URLSearchParams(window.location.search).get("id");
 const productContainer = document.querySelector(".productContainer");
-console.log("sidenVises");
+const starsFull = `<img src="../imgs/single/star_filled.svg" alt="star">`
+const starsEmpty = `<img src="../imgs/single/star.svg" alt="star">`
 
-fetch(`https://dummyjson.com/recipes/1`)
-  .then((response) => response.json())
-  .then((data) => {
-    productContainer.innerHTML = `
+// FETCH AND RENDER DATA
+window.addEventListener("load", () => {
+  fetch(`https://dummyjson.com/recipes/${productId}`)
+    .then((response) => response.json())
+    .then((data) => {
+      productContainer.innerHTML = `
     <img
-    src="/imgs/mad.webp"
+    src="https://cdn.dummyjson.com/recipe-images/${productId}.webp"
     alt="placeholder"
     class="image_container"
     />
 
     <h1> ${data.name}</h1>
-    
-    <section class="productDetails">
+    <div class="div_1">
     <h2>  Servings : ${data.servings}</h2>
-
-<br></>
-
-     <h2>Prep time : ${data.prepTimeMinutes} minutes</h2>
-     <h2>Cook time : ${data.cookTimeMinutes} minutes</h2>
-     
-     <br></>
-     <div class=divider></div>
-    <div class=blaa_border>
+    <br>
+     <h2>Prep time : ${data.prepTimeMinutes} min.</h2>
+     <h2>Cook time : ${data.cookTimeMinutes} min.</h2>
+     </div>
+    <div class=div_2>
     <h3>
     Ingredients :
     </h3>
-    <h2> ${data.ingredients}</h2>
-
-     <div class=divider></div>
-
-<br></>
-
+    <ul>
+    ${data.ingredients.map(ingredient => `<li><h2>${ingredient}</h2></li>`).join("")}
+    </ul>
+    </div>
+    <div class="div_3">
     <h3>
     Instructions :
     </h3>
-   <h2> ${data.instructions}</h2>
-
-<br></>
-<br></>
-<br></>
-
-
-   <h2 class=h2_reviews>  Reviews : ${data.servings}</h2>
+    <ul>
+    ${data.instructions.map(instruction => `<li><h2>${instruction}</h2></li>`).join("")}
+    </ul>
+    </div>
+      <div class="div_4">
+   <h2 class=h2_reviews> <div class="rating">${data.reviewCount} Reviews : ${starsFull.repeat(Math.floor(data.rating))}${starsEmpty.repeat(5 - Math.floor(data.rating))}</div></h2>
    <div/>
-    </section>
     </main>
     `;
-  });
+    });
+});
