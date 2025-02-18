@@ -41,7 +41,7 @@ window.addEventListener("load", () => {
     <h3>
     Ingredients :
     </h3>
-    <ul>
+    <ul class="card_list">
     ${data.ingredients.map((ingredient) => `<li><h2>${ingredient}</h2></li>`).join("")}
     </ul>
     </div>
@@ -49,7 +49,7 @@ window.addEventListener("load", () => {
     <h3>
     Instructions :
     </h3>
-    <ul>
+    <ul class="card_list">
     ${data.instructions.map((instruction) => `<li><h2>${instruction}</h2></li>`).join("")}
     </ul>
     </div>
