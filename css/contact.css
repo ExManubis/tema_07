@@ -25,3 +25,43 @@ h2 {
 .contact-container {
   padding: 7rem 1rem 2rem 1rem;
 }
+@media (min-width: 900px) {
+  .contact-container {
+    display: grid;
+    grid-template-columns: 2fr 2fr; /* Text takes 3 parts, Image takes 2 parts */
+    max-width: 1100px;
+    gap: 2rem;
+    margin: auto;
+    align-items: start; /* Aligns text to the top */
+    padding-top: 10rem;
+  }
+  .text-content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+@media (min-width: 1000px) {
+  .contact-container {
+    display: grid;
+    grid-template-columns: 3fr 2fr; /* Text takes 3 parts, Image takes 2 parts */
+    max-width: 1300px;
+    gap: 2rem;
+    margin: auto;
+    align-items: start; /* Aligns text to the top */
+    padding-top: 10rem;
+  }
+  .text-content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .image-content {
+    width: 100%;
+    max-width: 90%; /* Or any specific width you'd like */
+    height: auto;
+    display: block;
+    margin: 0 auto; /* Centers the element horizontally */
+    border-radius: 10px;
+  }
+}
