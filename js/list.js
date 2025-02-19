@@ -5,17 +5,23 @@ const listGrid = document.querySelector(".list_grid");
 const getUrl = window.location.search;
 const getSearch = new URLSearchParams(getUrl);
 const tag = getSearch.get("tag");
+const mealType = getSearch.get("mealtype");
 
 // FETCH DATA AND RENDER
 window.addEventListener("load", () => {
-  if (tag === null) {
+  if (tag === null && mealType === null) {
     let endPoint = `https://dummyjson.com/recipes?limit=0`;
     let heroTitle = "All Recipes";
     renderFilters();
     renderData(endPoint, heroTitle);
-  } else {
+  } else if (mealType === null) {
     let endPoint = `https://dummyjson.com/recipes/tag/${tag}`;
     let heroTitle = tag;
+    renderFilters();
+    renderData(endPoint, heroTitle);
+  } else {
+    let endPoint = `https://dummyjson.com/recipes/meal-type/${mealType}`;
+    let heroTitle = mealType;
     renderFilters();
     renderData(endPoint, heroTitle);
   }

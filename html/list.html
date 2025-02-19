@@ -65,9 +65,20 @@
         <div class="filters">
           <h3>Filters:</h3>
           <div class="filter_grid">
-          <form action="list.html" method="get" name='filter'>
-            <label for="Tag">Tag: </label>
-            <select class="tag" name="tag" onchange='filter.submit()'>
+          <form action="list.html" method="get" name='tag_filter'>
+            <select class="tag" name="tag" onchange='tag_filter.submit()'>
+            </select>
+          </form>
+          <form action="list.html" method="get" name='meal_filter'>
+            <select class="mealtype" name="mealtype" onchange='meal_filter.submit()'>
+              <option value="">Meal Type: </option>
+              <option value="Snack">Snack</option>
+              <option value="Breakfast">Breakfast</option>
+              <option value="Lunch">Lunch</option>
+              <option value="Dinner">Dinner</option>
+              <option value="Dessert">Dessert</option>
+              <option value="Side Dish">Side Dish</option>
+              <option value="Beverage">Beverage</option>
             </select>
           </form>
         </div>
