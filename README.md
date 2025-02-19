@@ -218,7 +218,10 @@ Brug korte beskrivelser, som i eksemplerne herover
 
 Dette afsnit skal liste de endpoints fra API'et i har benyttet:
 
-- (fx. <https://dummyjson.com/products>)
+- https://dummyjson.com/recipes/tags
+- https://dummyjson.com/recipes/
+- https://dummyjson.com/recipes/tag/
+- https://dummyjson.com/recipes/meal-type/ 
 
 # Dokumentation af Funktion
 
