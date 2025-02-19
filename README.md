@@ -230,11 +230,13 @@ Denne funktion kaldes via en eventlistener på window elementet i DOM'en, der ak
 Først kalder den en anden funktione - renderFilters() - der bruges til at hente de tags man kan filtrere med via en API og vise dem på vores side i et form-element.
 
 Herefter kører der tre kontrol-strukturer i funktionen, der via if-else logik ser om visse konditionaler er tilstede.
-Den første bruger if til at se om _begge_ konstanter tag og mealType er lig med null, hvor efter den passerer de to parametre "endPoint" og "heroTitle" med passende værdier til vores renderData() funktion, for at vise alle opskrifter fra API'et.
+Den første bruger if til at se om _begge_ konstanter "tag", "sortBy" og "mealType" er lig med null, hvor efter den passerer de to parametre "endPoint" og "heroTitle" med passende værdier til vores renderData() funktion, for at vise alle opskrifter fra API'et.
 
-Hvis denne kontrolstruktur ikke aktiveres, tjekker den om _kun_ "mealType" er lig med null. Hvis dette er tilfældet, har den fået en "tag" konstant passeret, og den kan herefter passere den videre til vores renderData() funktion for at vise alle opskrifter med et bestemt tag igennem API'et.
+Hvis denne kontrolstruktur ikke aktiveres, tjekker den om _både_ "mealType" og "sortBy" er lig med null. Hvis dette er tilfældet, har den fået en "tag" konstant passeret, og den kan herefter passere den videre til vores renderData() funktion for at vise alle opskrifter med et bestemt tag igennem API'et.
 
-Til sidst bruges der en "else" kontrolstruktur. Denne aktiveres hvis "tag" er lig null, medens der er blevet passeret en værdi til konstanten "mealType". Herefter passerer den de to parametrer med passende værdier til vores renderData() funktion, så den kan vise alle opskrifter med den valgte "mealtype" hentet fra API'et.
+Efter denne, aktiveres en kontrolstruktur tjekker om "mealType" og "tag" er lig null, hvor efter den passerer de passende parametrer videre med data fra konstanten sortBy til renderData() funktion, for at sortere opskrifterne efter den valgte værdi.
+
+Til sidst bruges der en "else" kontrolstruktur. Denne aktiveres hvis "tag" og "sortBy" er lig null, medens der er blevet passeret en værdi til konstanten "mealType". Herefter passerer den de to parametrer med passende værdier til vores renderData() funktion, så den kan vise alle opskrifter med den valgte "mealtype" hentet fra API'et.
 
 ```javascript
 // CONSTANTS
@@ -242,17 +244,22 @@ const getUrl = window.location.search;
 const getSearch = new URLSearchParams(getUrl);
 const tag = getSearch.get("tag");
 const mealType = getSearch.get("mealtype");
+const sortBy = getSearch.get("sortby");
 
 // FETCH DATA AND RENDER
 window.addEventListener("load", () => {
   renderFilters();
-  if (tag === null && mealType === null) {
+  if (tag === null && mealType === null && sortBy === null) {
     let endPoint = `https://dummyjson.com/recipes?limit=0`;
     let heroTitle = "All Recipes";
     renderData(endPoint, heroTitle);
-  } else if (mealType === null) {
+  } else if (mealType === null && sortBy === null) {
     let endPoint = `https://dummyjson.com/recipes/tag/${tag}`;
     let heroTitle = tag;
+    renderData(endPoint, heroTitle);
+  } else if (mealType === null && tag === null) {
+    let endPoint = `https://dummyjson.com/recipes?limit=0&sortBy=${sortBy}&order=asc`;
+    let heroTitle = `Sorted by: ${sortBy} `;
     renderData(endPoint, heroTitle);
   } else {
     let endPoint = `https://dummyjson.com/recipes/meal-type/${mealType}`;
