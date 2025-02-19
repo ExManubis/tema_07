@@ -221,22 +221,43 @@ Dette afsnit skal liste de endpoints fra API'et i har benyttet:
 - https://dummyjson.com/recipes/tags
 - https://dummyjson.com/recipes/
 - https://dummyjson.com/recipes/tag/
-- https://dummyjson.com/recipes/meal-type/ 
+- https://dummyjson.com/recipes/meal-type/
 
 # Dokumentation af Funktion
 
-Dette afsnit skal beskrive en funktion I selv har udviklet. Det kunne eksempelvis være en funktion der generere en listen over fx. produkter:
+Funktionen vi har valgt at beskrive, er vores funktion til visning af opskrifter på vores side list.html.
+Denne funktion kaldes via en eventlistener på window elementet i DOM'en, der aktiveres når siden er "loadet".
+Først kalder den en anden funktione - renderFilters() - der bruges til at hente de tags man kan filtrere med via en API og vise dem på vores side i et form-element.
 
-- Beskrivelse: Hvad gør funktionen? Hvordan spiller den sammen med resten af koden?
-- Parametre: Hvilke input forventes (fx en værdi fra en dropdown eller URL'en)?
-- Returnerer: Beskriv, om funktionen returnerer en værdi eller blot manipulerer DOM’en.
-- Eksempel på brug: Indsæt funktions-koden herunder(der hvor koden er i eksemplet) og vis, hvordan funktionen kaldes:
+Herefter kører der tre kontrol-strukturer i funktionen, der via if-else logik ser om visse konditionaler er tilstede.
+Den første bruger if til at se om _begge_ konstanter tag og mealType er lig med null, hvor efter den passerer de to parametre "endPoint" og "heroTitle" med passende værdier til vores renderData() funktion, for at vise alle opskrifter fra API'et.
+
+Hvis denne kontrolstruktur ikke aktiveres, tjekker den om _kun_ "mealType" er lig med null. Hvis dette er tilfældet, har den fået en "tag" konstant passeret, og den kan herefter passere den videre til vores renderData() funktion for at vise alle opskrifter med et bestemt tag igennem API'et.
+
+Til sidst bruges der en "else" kontrolstruktur. Denne aktiveres hvis "tag" er lig null, medens der er blevet passeret en værdi til konstanten "mealType". Herefter passerer den de to parametrer med passende værdier til vores renderData() funktion, så den kan vise alle opskrifter med den valgte "mealtype" hentet fra API'et.
 
 ```javascript
-//funktionens kode:
-function voresFunktion(sprog) {
-  console.log(`${sprog} syntax highlighting`);
-}
-//hvordan funktionen kaldes:
-voresFunktion("JavaScript");
+// CONSTANTS
+const getUrl = window.location.search;
+const getSearch = new URLSearchParams(getUrl);
+const tag = getSearch.get("tag");
+const mealType = getSearch.get("mealtype");
+
+// FETCH DATA AND RENDER
+window.addEventListener("load", () => {
+  renderFilters();
+  if (tag === null && mealType === null) {
+    let endPoint = `https://dummyjson.com/recipes?limit=0`;
+    let heroTitle = "All Recipes";
+    renderData(endPoint, heroTitle);
+  } else if (mealType === null) {
+    let endPoint = `https://dummyjson.com/recipes/tag/${tag}`;
+    let heroTitle = tag;
+    renderData(endPoint, heroTitle);
+  } else {
+    let endPoint = `https://dummyjson.com/recipes/meal-type/${mealType}`;
+    let heroTitle = mealType;
+    renderData(endPoint, heroTitle);
+  }
+});
 ```
