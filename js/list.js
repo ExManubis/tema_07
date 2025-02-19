@@ -8,12 +8,9 @@ const tag = getSearch.get("tag");
 const mealType = getSearch.get("mealtype");
 const sortBy = getSearch.get("sortby");
 
-// RUN SCRIPT
-renderFilters();
-filterData();
-
 // FETCH DATA AND RENDER
-function filterData() {
+window.addEventListener("load", () => {
+  renderFilters();
   if (tag === null && mealType === null && sortBy === null) {
     let endPoint = `https://dummyjson.com/recipes?limit=0`;
     let heroTitle = "All Recipes";
@@ -31,7 +28,7 @@ function filterData() {
     let heroTitle = mealType;
     renderData(endPoint, heroTitle);
   }
-}
+});
 
 // RENDER FILTERS
 function renderFilters() {
