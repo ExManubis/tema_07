@@ -63,6 +63,18 @@
       <div class="list_container">
         <h1 class="hero">ASIAN</h1>
         <div class="filters">
+          <h3>Sort:</h3>
+          <div class="filter_grid">
+          <form action="list.html" method="get" name='sorting'>
+            <select class="sortby" name="sortby" onchange='sorting.submit()'>
+              <option value="name">Name</option>
+              <option value="servings">Servings</option>
+              <option value="cuisine">Cuisine</option>
+              <option value="rating">Rating</option>
+            </select>
+          </form>
+        </div>
+        <div class="filters">
           <h3>Filters:</h3>
           <div class="filter_grid">
           <form action="list.html" method="get" name='tag_filter'>
