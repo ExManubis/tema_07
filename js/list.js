@@ -55,7 +55,7 @@ function renderData(endPoint, heroTitle) {
           <div class="card">
           <a href="./single.html?id=${recipe.id}">
             <div class="title">
-              ${recipe.name}
+              <h2>${recipe.name}</h2>
               <img src="../imgs/arrow.svg" alt="arrow" />
             </div>
             <img
