@@ -1,5 +1,6 @@
 // CONSTANTS
 const hero = document.querySelector(".hero");
+const filterOption = document.querySelector(".tag");
 const listGrid = document.querySelector(".list_grid");
 const getUrl = window.location.search;
 const getSearch = new URLSearchParams(getUrl);
@@ -10,13 +11,31 @@ window.addEventListener("load", () => {
   if (tag === null) {
     let endPoint = `https://dummyjson.com/recipes?limit=0`;
     let heroTitle = "All Recipes";
+    renderFilters();
     renderData(endPoint, heroTitle);
   } else {
     let endPoint = `https://dummyjson.com/recipes/tag/${tag}`;
     let heroTitle = tag;
+    renderFilters();
     renderData(endPoint, heroTitle);
   }
 });
+
+// RENDER FILTERS
+function renderFilters() {
+  fetch(`https://dummyjson.com/recipes/tags`)
+    .then((response) => response.json())
+    .then((data) => {
+      const filterContent = data
+        .map(
+          (filter) => `
+    <option value="${filter}">${filter}</option>
+   `,
+        )
+        .join("");
+      filterOption.innerHTML = filterContent;
+    });
+}
 
 // RENDER & SHOW DATA FUNCTION
 function renderData(endPoint, heroTitle) {

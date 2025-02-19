@@ -62,6 +62,16 @@
 
       <div class="list_container">
         <h1 class="hero">ASIAN</h1>
+        <div class="filters">
+          <h3>Filters:</h3>
+          <div class="filter_grid">
+          <form action="list.html" method="get" name='filter'>
+            <label for="Tag">Tag: </label>
+            <select class="tag" name="tag" onchange='filter.submit()'>
+              <option value="">Tag:</option>
+            </select>
+          </form>
+        </div>
         <div class="list_grid"></div>
       </div>
     </main>
