@@ -6,24 +6,32 @@ const getUrl = window.location.search;
 const getSearch = new URLSearchParams(getUrl);
 const tag = getSearch.get("tag");
 const mealType = getSearch.get("mealtype");
+const sortBy = getSearch.get("sortby");
+
+// RUN SCRIPT
+renderFilters();
+filterData();
 
 // FETCH DATA AND RENDER
-window.addEventListener("load", () => {
-  renderFilters();
-  if (tag === null && mealType === null) {
+function filterData() {
+  if (tag === null && mealType === null && sortBy === null) {
     let endPoint = `https://dummyjson.com/recipes?limit=0`;
     let heroTitle = "All Recipes";
     renderData(endPoint, heroTitle);
-  } else if (mealType === null) {
+  } else if (mealType === null && sortBy === null) {
     let endPoint = `https://dummyjson.com/recipes/tag/${tag}`;
     let heroTitle = tag;
+    renderData(endPoint, heroTitle);
+  } else if (mealType === null && tag === null) {
+    let endPoint = `https://dummyjson.com/recipes?limit=0&sortBy=${sortBy}&order=asc`;
+    let heroTitle = `Sorted by: ${sortBy} `;
     renderData(endPoint, heroTitle);
   } else {
     let endPoint = `https://dummyjson.com/recipes/meal-type/${mealType}`;
     let heroTitle = mealType;
     renderData(endPoint, heroTitle);
   }
-});
+}
 
 // RENDER FILTERS
 function renderFilters() {
