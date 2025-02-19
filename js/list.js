@@ -33,7 +33,9 @@ function renderFilters() {
    `,
         )
         .join("");
-      filterOption.innerHTML = filterContent;
+      filterOption.innerHTML = `
+      <option value ="">Tag: </option>
+      ${filterContent}`;
     });
 }
 
