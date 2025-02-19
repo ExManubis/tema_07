@@ -4,7 +4,6 @@ main {
   background-image: url("../imgs/index/illustrationtable_mobil.svg");
   background-attachment: fixed;
   background-position: bottom;
-  background-repeat: no-repeat;
 }
 
 .hero {
@@ -29,9 +28,12 @@ main {
   text-decoration: none;
   color: var(--fg_alt);
   font-family: "Instrument Serif";
-  font-size: 2rem;
+  font-size: 1.5rem;
   text-align: center;
   text-transform: uppercase;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 .box {
@@ -39,7 +41,7 @@ main {
   display: flex;
   justify-content: space-between;
   border: 3px solid var(--border);
-  width: 350px;
+  width: 300px;
   margin-bottom: 3vh;
   background-color: var(--bg);
 }
@@ -57,7 +59,8 @@ a:visited {
   main {
     background-image: url("../imgs/index/illustrationtable.svg");
     background-attachment: scroll;
-    height: 100vh;
+    background-repeat: repeat;
+    height: 100%;
   }
 
   .hero {
