@@ -14,6 +14,37 @@
   text-transform: uppercase;
 }
 
+.filters h3 {
+  font-family: "Averia Sans Libre";
+  font-size: 1.5rem;
+  padding-left: 10px;
+}
+
+.filter_grid {
+  display: flex;
+  flex-direction: column;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  gap: 1rem;
+}
+
+@media (min-width: 800px) {
+  .filter_grid {
+    flex-direction: row;
+  }
+}
+
+.filter_grid select {
+  font-family: "Instrument Serif";
+  font-size: 1.5rem;
+  color: var(--fg_alt);
+  border-radius: 0px;
+  border: 3px solid var(--border);
+  background-color: var(--bg);
+  width: 200px;
+}
+
 .list_grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -29,6 +60,7 @@
   border: 3px solid var(--border);
   margin-bottom: 1vh;
   margin: 0vh 10px 1vh 10px;
+  width: 300px;
 }
 
 .title {
