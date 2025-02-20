@@ -2,9 +2,10 @@
   color: #ffffff; /* Vælg den farve, du ønsker */
   padding: 0;
 }
-.box-3 p {
+.box-3 a {
   color: #ffffff;
   padding: 0.8rem 0 0 0;
+  text-decoration: none;
 }
 .footer_container {
   margin: 0 auto;
@@ -22,7 +23,9 @@
   width: 95vw;
   max-width: none;
   display: block;
-  transition: transform 0.3s ease-in-out, opacity 0.5s ease-out;
+  transition:
+    transform 0.3s ease-in-out,
+    opacity 0.5s ease-out;
 }
 
 .box-2 {
@@ -38,7 +41,9 @@
 .socials img {
   width: 30px;
   height: auto;
-  transition: transform 0.3s ease-in-out, opacity 0.5s ease-out;
+  transition:
+    transform 0.3s ease-in-out,
+    opacity 0.5s ease-out;
 }
 .socials img:hover {
   opacity: 0.85;
