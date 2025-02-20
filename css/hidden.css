@@ -1,0 +1,9 @@
+.recipe_form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20vh;
+  padding-bottom: 10vh;
+  font-family: "Instrument Serif";
+  font-size: 1.2rem;
+}
